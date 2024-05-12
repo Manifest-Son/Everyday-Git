@@ -11,13 +11,14 @@
     <p>
         Git is an open source version control system. A key word to note is <strong>version control system</strong>. 
     </p>
+    <div>
     <h2>What is a version control system.</h2>
     <p>
-        A <b>version control system</b> tracks and records changes to any file(s) allowing one to recall specific iterations later on as needed.<br>  For example you are an author of a book that you need it published in some months to come. As an author considering the readers you are writing to, you are required to review the writing as much as you can in order to communicate. While doing this you end up to make some changes that alter the original writing. Therefore, you will make another copy of the original book file and make changes. During this process of reviewing, you may need your suggested authors to review and make changes. These changes are recorded based on who made the and you can also have the chance to use the original book after seeing the changes could not fit in. Now, this is made possible through <b>Git</b>. <br> 
+        A <b>version control system</b> tracks and records changes to any file(s) allowing one to recall specific iterations later on as needed. It can be applied both locally and remotely. <br> For example you are an author of a book. You need it published in some months to come. Before you publish it it must be reviewed to ensure that it communicates the message and it has no error. You will be required to go through by yourself and selected people that you trust them. In this your file will undergo changes to accomodate their different opinions. You will have an original file that you and the team can work on to bring about the changes. Git makes copies of the file and gives branches of the changes that are suggested. After the review process,  multiple files will be created and suggested while records of file changes are stored that when something in them is wrong you can go back to the previous stage. You shall accept the suggestions you need to make sure that its ready for publishing. <br>  
         Git is a version control version for it is responsible to store the project in a repository(file folder),track the file changes and enable code collaboration between teams remotely.
     </p>
     <p>
-        In this example we learn that git:
+        In this example we learn that <b>Git</b>:
     <ol>
         <li>Tracks file changes.</li>
         <li>Tracks who made the changes.</li>
@@ -27,8 +28,180 @@
     <p>
         Other than <b>git</b>, we have other version control systems which include: <b>Mercurial</b>, <b>AzureDevOps</b>, <b>Bitbucket</b>, just to name a few. <br> But in this blog, we shall not talk about the examples given above but shall focus on <b>Git</b> and <b>GitHub</b>.
     </p>
-    <h2>Installing Git</h2>
+    </div>
+    <div>
+        <h2>Installing Git</h2>
     <p>For both Windows and MacOs users <b>Git</b> doesnt come preinstalled in the system but I shall guide you on how to check whether Git is installed and how to install it. For the Windows users you can search for the <em>Command Line</em> and run it. For the Mac Os users, you can use the <em>Terminal</em>. In both <em>Terminal </em> and <em>Command Line</em>, type 
         <pre>git --version</pre> or you can type <pre>git -v</pre></p>
+    <div style="margin-left: 30px;">
+        <img src="assets/gitcheck.png" alt="An example of checking whether git is installed">
+        <p> Using both commands it gives the same input. </p>
+    </div>
+    <p>In my PC <b>Git</b> is installed for it has displayed the version. If it shows any other message other than the version, you may need to download.</p>
+    </div>
+    <div>
+        
+    <p>To download <B>Git</B>, you will find it in <a href="https://git-scm.com/downloads">Git Download page</a> which will show an interface as displayed below. Download and install it in your system. Then after the installation process, repeat rhe process above to confirm the installation.
+    </p>
+    <div style="margin-left: 30px;">
+        <img src="assets/Gitdownload.png" alt="Git download">
+    </div>
+    </div>
+    
+    <h2>Configuring Git</h2>
+    I need to take you through the <b>Git</b> configuration process. You cannot use <b>Git</b> successfully without a username and email address. Its a simple process. <br> To set up you will follow the process below.
+    <ol>
+        <li>Open the <em>Command Line</em> or <em>Terminal</em></li>
+        <li>Write the command. Write your own username quatation marks <pre>git config --global user.name "        "</pre> then click enter.</li>
+        <li>Write the command. Write your own user email in quatation marks <pre>git config --global user.email "        "</pre>then click enter.</li>
+        <li>You are done.</li>
+    </ol>
+    <div style="margin-left: 30px;">
+        <img src="assets/git-config.png" alt="Git configuration">
+        <p>Here is an example of configuring your <b>Git</b></p>
+    </div>
+    <div>
+        <h2>Initializing a Git repository</h2>
+        <h4>What is a Git repository</h4>
+        <p>A Git repository is a directory where all the files for a particular project are stored. It contains all of the project's revisions and history. Before you initialize your <b>Git</b>, you are required to make a folder. This is for those who have not yet started by creating a folder. Using your <em>Terminal</em> and <em>Command Line</em> this the procedure in the image below.</p>
+        <div style="margin-left: 30px;">
+            <img src="assets/new-folder.png" alt="Creating a new folder and a working directory">
+        </div>
+        <p>With this, this is how to initialize the <B>Git</B> repository.</p>
+        <div style="margin-left: 30px;">
+            <img src="assets/git-init.png" alt="Initializing a git repository">
+            <p>You have already initialized your folder now you can make changes and track them.</p>
+        </div>
+    </div>
+    <div>
+        <h2>Adding files to a staging area</h2>
+        <p>A staging area is an area where changes to files are prepared before they are committed to repository. <br> Files in your Git repository folder can be in one of 2 states:
+        </p>
+        <ul>
+            <li>Tracked - files that Git knows about and are added to the repository</li>
+            <li>Untracked - files that are in your working directory, but not added to the repository</li>
+        </ul>
+        <p> Here is how to know tracked and untracked files and also make untracked files, tracked.</p>
+        <ul>
+            <li>Adding a file in the staging area you will need this command <pre>git add filename</pre></li>
+            <li>If you have more than one area you can use one of the solutions below:
+                <ol>
+                    <li><pre>git add file1 file2 file3</pre></li>
+                    <li><pre>git add .</pre></li>
+                </ol>
+            </li>
+        </ul>
+        <p>This is a demonstration of an untracked file</p>
+        <div style="margin-left: 30px;">
+        <img src="assets/git-status.png" alt="An untracked file in a repository" title="Untracked file">
+        <p>The system realizes is as untracked and a red text of the file is shown.</p>
+        </div>
+        <p>This is a demonstration of a tracked file</p>
+        <div style="margin-left: 30px;">
+        <img src="assets/tracked.png" alt="An tracked file in a repository" title="Tracked file">
+        <p>The changes are commited to inform that they are now tracked.</p>
+        </div>
+    </div>
+    <div>
+        <h2>Commiting Changes</h2>
+        <p>Adding commits keep track of our progress and changes as we work. Git considers each commit as a change point. It is a point in the project you can go back to if you find a bug, or want to make a change.</p>
+        <p>When we commit, we should always include a message. By adding clear messages to each commit, it is easy for yourself and others to see what has changed. The message should answer the question: <b>"The commit will...."</b> </p>
+        <p>The command is: <pre>git commit -m "write your message here"</pre></p>
+
+        <div style="margin-left: 30px;">
+        <img src="assets/commit.png" alt="committing changes in our repository.">
+        <p>The changes have been commited and each commit has commit ID</p>
+        </div>
+        
+        <p>Now I want to show you how to track back to where you had began. By this i will add a new file and commit it to the repository. Then we will track back to that place that we had initially began. It is simple process to get through.<br> If we want to view past commits, use the <em>git log</em> command. <em><b>git revert</b></em> will undo changes up to the state before the specified commit ID. For example, reverting to the second commit ID will undo changes and leave the state of the file as the state of the commit that comes before the second commit the first commit.
+        </p>
+        <div style="margin-left: 30px;">
+            <img src="assets/git-revert.png" alt="Reverting the changes to a previous staging area">
+            <p>Git revert is a command you use to get back to the state of change you want to see.</p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>Branches</h2>
+            <p>Branches are pointers to the latest commit in the Git repository. Git allows you to create multiple pointers using branches. The default branch is called master. It is importan beacause when you need to develop a feature or fix a bug, you can create a new branch  to hold your changes without affecting the main working branch.</p>
+        </div>
+        
+        <div>
+            <h3>How do you create a branch?</h3>
+            <p>We create the git branch using the command: <pre>git branch branch_name</pre></p>
+            <p>Lets assume we make changes in our repository and we have commited the changes, what we shall do is to create a new branch to point to a new change request to the main branch</p>
+        <div style="margin-left: 30px;">
+            <img src="assets/git-branch.png" alt="Creating a branch and displaying them">
+            <p>We have created a branch with the name "first_book" then displayed the branches we have in our repository</p>
+        </div>
+        </div>
+        <div>
+            <h3>Switching active branches</h3>
+            <p>Here we switch branches to become default branches where changes will be reflected on.</p>
+            <ul>
+                <li>Number one displays master as the default branch</li>
+                <li>After using <em>git checkout</em> command the default branch is first_book</li>
+            </ul>
+            <div style="margin-left: 30px;">
+                <img src="assets/git-checkout.png" alt="Switching branches">
+                <p>The marfes are switched to make the other default.</p>
+            </div>
+        </div>
+            <div>
+                <h3>Merging a branch</h3>
+                <p>Merging takes your branch changes and implements them into the main branch. <br>To merge a branch, 
+                    <ol>
+                        <li>Add all the changes made in that branch to the staging area, then commit those changes.</li>
+                        <li>After that, move to your master/main branch/the branch you want to merge this branch with.</li>
+                        <li>We then use the command git merge branch-name to merge that branch.</li>
+                    </ol>
+                </p>
+                <div style="margin-left: 30px;">
+                    <img src="assets/git-merge.png" alt="Git merging">
+                    <p>Ours is already upto date.</p>
+                </div>
+            </div>
+        <div>
+            <h3>Deleting a branch</h3>
+            <p>If we want/and are sure, we can then delete that branch using the command <pre>git branch &mdash;d branch-name</pre>
+            </p>
+            <div style="margin-left: 30px;">
+                <img src="assets/Branch-delete.png" alt="Deleting a branch">
+                <p>The branch has been deleted.</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2>GitHub</h2>
+        <div><img src="assets/new-repo.png" alt="Use the + sign">
+            <p>Use the "+" to add a new repository.</p>
+        </div>
+        <p>GitHub is a cloud-based hosting service that helps teams manage their repositories. It was designed in 2008 to make collaborative projects possible. In addition to offering Git&apos;s standard version control features, GitHub has its own features such as bug tracking, task management tools, and continuous integration (CI). GitHub runs on a freemium model; users can access many features for free but must pay for a premium subscription to unlock all features. GitHub has been owned by Microsoft since 2018.</p>
+        <h3>How to use it as a version control</h3>
+        <p>You will be required to create an account through signing in. After signing in you will be directed to your dashboard that will have every tool for development. </p>
+        <p>On the button above with the "+" sign click on it and cleck on the option to create a new repository.
+        </p>
+        <div style="margin-left: 30px;">
+            <img src="assets/new_repo.png" alt="Creating a repository">
+            <p>Create a new repository.</p>
+        </div>
+        <p>Getting to tranfer your git repository remotely to GitHub, is as follows:
+            <ol>
+                <li>git remote add origin "..type your git repository link..</li>
+                <li>git branch -M main</li>
+                <li>git push -u origin main</li>
+            </ol>
+        </p>
+        <div style="margin-left: 30px;">
+            <img src="assets/cmd_push.png" alt="Transfering our local repository to GitHub.">
+            <p>Transfering our local repository to GitHub.</p>
+        </div>
+        <div style="margin-left: 30px;">
+            <p>Lets look in our dashboard.</p>
+            <img src="assets/repo.png" alt="">
+        </div>
+        <div>
+            <h3>Congratulations! You just learned Git and GitHub</h3>
+        </div>
 </body>
 </html>
